@@ -1,24 +1,21 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Hier werden die Bestandteile des Projekts erläutert und erklärt in welcher Reihenfolge die Skripte ausgeführt werden müssen.
 
-\begin{table}[]
-\centering
-\caption{}
-\label{undefined}
-\begin{tabular}{llll}
-\textbf{Rank} & \textbf{Input} & \textbf{Skript} & \textbf{Output} \\
-1 & - & \textbf{thomann\_spider.py} & thomann\_reviews\_all.csv \\
-2 & thomann\_reviews\_all.csv & \textbf{mini\_EDA.ipynb} & - \\
-3 & thomann\_reviews\_all.csv & \textbf{preprocessing.ipynb} & enriched\_thomann\_data.pickle \\
-4 & enriched\_thomann\_data.pickle & \textbf{baseline\_model.ipynb} & - \\
-5 & enriched\_thomann\_data.pickle & \textbf{word2vec.ipynb} & w2v\_model.pickle \\
-6 & \begin{tabular}[c]{@{}l@{}}enriched\_thomann\_data.pickle\\ w2v\_model.pickle\end{tabular} & \textbf{final\_Modelling\_v2.ipynb} & \begin{tabular}[c]{@{}l@{}}Models\\ Results\end{tabular}
-\end{tabular}
-\end{table}
+Die nachfolgende Tabelle gibt an welche Dateien als Vorbedingungen für Skripte verfügbar sein müssen (Input),
+und welche Datein von einem Skript produziert werden (Output). Dadurch wird die Reihenfolge der Skripte festgelegt.
 
-Anmerkung:
-Die Dateien w2v_model.pickle und enriched_thomann_data.pickle mussten wegen ihrer Dateigröße komprimiert werden. Sie werden im Archiv *pickles.7z* zusammengefasst.
+| Rank | Input                                         | Skript                   | Output                       |
+|------|-----------------------------------------------|--------------------------|------------------------------|
+| 1    | -                                             | thomann_spider.py        | thomann_reviews_all.csv      |
+| 2    | thomann_reviews_all.csv                       | mini_EDA.ipynb           | -                            |
+| 3    | thomann_reviews_all.csv                       | preprocessing.ipynb      | enriched_thomann_data.pickle |
+| 4    | enriched_thomann_data.pickle                  | baseline_model.ipynb     | -                            |
+| 5    | enriched_thomann_data.pickle                  | word2vec.ipynb           | w2v_model.pickle             |
+| 6    | enriched_thomann_data.pickle w2v_model.pickle | final_Modelling_v2.ipynb | Models Results               |
+
+Anmerkung: Da die Dateigrößen von *enriched_thomann_data.pickle* und *w2v_model.pickle* die maximale Uploadgröße von Github
+überschritten, müssen diese erst durch die entsprechenden Skripte erstellt werden. 
 
 ### thomann_spider
 Für die Datenbeschaffung ist ein Webscraper in Python mithilfe des Scrapy Paket erstellt worden. Dieser extrahiert Bewertungen von der Webseite [thomann](https://www.thomann.de/de/gitarren_baesse.html).
